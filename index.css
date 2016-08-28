@@ -133,10 +133,10 @@ article {
 
 #btn li {
 	display: inline-block;
-	margin-left: -27px;
-	margin-right: 27px;
-	padding-left: 1px;
-	padding-right: 1px;
+	margin-left: -17px;
+	margin-right: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #btn a:hover{
