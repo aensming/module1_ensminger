@@ -48,11 +48,13 @@
 				console.log( card );
 			
 				// use conditional statement, if, to decide scoring
-				if (card.rank < '10') {
+				if ((card.rank >= '2') && (card.rank < '10')) {
 					score = score + 1; // score++;
 					
+					if (card.rank > '10') {
+						score = score + 10;
 				} else {
-					score = score + 10;
+					score = score + 0;
 				}
 			
 				// control for score floor at zero
