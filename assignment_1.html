@@ -1,55 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<meta charset="utf-8">
+		<meta charset="utf-8">
 		<title>Cards and Conditionals</title>
-			<script src = "jquery-1.12.0.min.js"></script><!-- loads jQuery library -->
-			<script src = "playingCards.js"></script><!-- loads playing cards project files (js & css) -->
-			<script src = "playingCards.ui.js"></script>
-			<link rel="stylesheet" type="text/css" href="playingCards.ui.css">
+    
+		<!-- load jQuery library -->
+		<script src="jquery-1.12.0.min.js"></script>
+    
+		<!-- load playing cards project files (js + css) -->
+		<script src="playingCards.js"></script>
+		<script src="playingCards.ui.js"></script>
+    
+		<link rel="stylesheet" type="text/css" href="playingCards.ui.css">
 	</head>
 	<body>
-		<h2>Module 1: Cards and Conditionals</h2>
-		<div id = "controls">
-			<button type = "button" onclick="playRound();">
+		<h2>Playing Cards and Conditionals</h2>
+	
+		<!-- Provide html elements for UI -->
+		<div id="controls">
+			<button type="button" onclick="playRound();">
 				Draw a Card
 			</button>
 		</div>
-			<h4 id = "scoreboard"></h4>
-				<br><br>
-		<div id = "cardtray"></div>
+	
+		<h4 id="scoreboard">
+		</h4>
+	
+		<div id="cardtray">
+		</div>
+	
+		<!-- Game flow in JS --> 
+		<script>
+			// set score
+			var score = 0;
 		
+			// create card deck object
+			var cardDeck = $("#cardtray").playingCards();
+        
+			// shuffle card objects
+			cardDeck.shuffle();
 		
-			<script><!-- game flow in JS -->
-				// set score
-					var score = 0;
-				
-				// create card deck objects
-					var cardDeck = $("#cardtray").playingCards();
-				// shuffle cards
-					cardDeck.shuffle();
+			function playRound() {
+				// draw one card object from deck
+				var card = cardDeck.draw();
 			
-				function playRound() {
-					var card = cardDeck.draw();
-					console.log( card );
+				// log card object to browser console for observing
+				console.log( card );
+			
+				// use conditional statement, if, to decide scoring
+				if ( ( card.suit == 'D' ) || (card.suit == 'H') ){
+					score = score + 1; // score++;
 				
-						if (card.rank == 'K') || (card.rank == 'Q') || (card.rank == 'J') || (card.rank 	== '10') {
-								score = score + 10;
-						} else {
-							score = score + 1;
-						}
-				
-						if (score < 0) {
-							score = 0;
-						}
-				
-					$('scoreboard').html( score );
-				
-				
-					var markup = card.getHTML();
-					$('#cardtray').html( markup );
+					// a nested if statement
+					if ( card.rank == 'K' ) {
+						score = score + 10;
+					}
+				} else {
+					score = score - 1; // score--;
 				}
-			</script>
+			
+				// control for score floor at zero
+				if ( score < 0 ) {
+					score = 0;
+				}
+			
+				// output score
+				$('#scoreboard').html( score );
+			
+				// output html for card drawn
+				var markup = card.getHTML();
+				$('#cardtray').html( markup );
+			}
+		</script>
 		</div>
 	</body>
 </html>
