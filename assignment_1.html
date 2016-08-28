@@ -41,23 +41,23 @@
 			cardDeck.shuffle();
 		
 			function playRound() {
-			// draw one card object from deck
-			var card = cardDeck.draw();
+				// draw one card object from deck
+				var card = cardDeck.draw();
 			
-			// log card object to browser console for observing
-			console.log( card );
+				// log card object to browser console for observing
+				console.log( card );
 			
-			// use conditional statement, if, to decide scoring
-			if ( ( card.suit == 'D' ) || (card.suit == 'H') ){
-				score = score + 1; // score++;
+				// use conditional statement, if, to decide scoring
+				if ( ( card.suit == 'D' ) || (card.suit == 'H') ){
+					score = score + 1; // score++;
 				
-				// a nested if statement
-				if ( card.rank == 'K' ) {
-					score = score + 10;
+					// a nested if statement
+					if ( card.rank == 'K' ) {
+						score = score + 10;
+					}
+				} else {
+					score = score - 1; // score--;
 				}
-			} else {
-				score = score - 1; // score--;
-			}
 			
 				// control for score floor at zero
 				if ( score < 0 ) {
