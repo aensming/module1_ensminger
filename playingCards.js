@@ -169,7 +169,8 @@ if (Array.indexOf === undefined) {
             "J": "Jack",
             "Q": "Queen",
             "K": "King",
-            "A": "Ace"
+            "A": "Ace",
+			"JR": "Joker"
         },
         "suits": {
             "S": "Spades",
