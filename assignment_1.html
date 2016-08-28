@@ -25,40 +25,37 @@
 		<div id = "cardtray2"></div>
 		
 		
-		<script><!-- game flow in JS -->
-			// set scoreboard
-				var score = 0;
-				var score2 = 0;
+			<script><!-- game flow in JS -->
+				// set scoreboard
+					var score = 0;
 				
-			// create card objects
-				var cardDeck = $("#cardtray").playingCards();
-				var cardDeck2 = $("#cardtray2").playingCards();
-			// shuffle cards
-				cardDeck.shuffle();
-				cardDeck2.shuffle();
+				// create card objects
+					var cardDeck = $("#cardtray").playingCards();
+				// shuffle cards
+					cardDeck.shuffle();
 			
-			function playRound() {
-				var card = cardDeck.draw();
-				console.log(card);
+				function playRound() {
+					var card = cardDeck.draw();
+					console.log(card);
 				
-					if (card.rank == 'K') || (card.rank == 'Q') || (card.rank == 'J') || (card.rank == '10') {
-							score = score + 10;
-						}
-					}
-					else {
+						if (card.rank == 'K') || (card.rank == 'Q') || (card.rank == 'J') || (card.rank 	== '10') {
+								score = score + 10;
+							}
+				}
+				else {
 						score = score + 1;
-					}
+				}
 				
 				if (score < 0) {
 					score = 0;
 				}
 				
 				$('scoreboard').html('score');
-				$('scoreboard2').html('score2');
 				
 				
 				var markup = card.getHTML();
 				$('scoreboard').append(markup);
-				
-				var markup2 = card.getHTML();
-				$('scoreboard2').append(markup2);
+			</script>
+		</div>
+	</body>
+</html>
