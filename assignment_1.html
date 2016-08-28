@@ -47,16 +47,16 @@
 				// log card object to browser console for observing
 				console.log( card );
 			
-				// use conditional statement, if, to decide scoring
+				
 				if ( ( card.suit == 'D' ) || (card.suit == 'H') ){
 				score = score + 1; // score++;
 				
-				// a nested if statement
+				
 				if ( card.rank == 'K' ) {
 					score = score + 10;
 				}
 			} else {
-				score = score - 1; // score--;
+				score = score - 1;
 			}
 			
 				// control for score floor at zero
