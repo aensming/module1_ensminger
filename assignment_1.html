@@ -46,9 +46,12 @@
 						}
 					}
 					else {
-						score = score - 1;
+						score = score + 1;
 					}
-					
+				
+				if (score < 0) {
+					score = 0;
+				}
 				
 				$('scoreboard').html('score');
 				$('scoreboard2').html('score2');
