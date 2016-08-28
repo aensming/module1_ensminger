@@ -54,8 +54,8 @@
 					if ((card.rank == 'K') || (card.rank == 'Q') || (card.rank == 'J') || (card.rank == '10')) {
 						score = score + 10;
 					}
-				} else {
-					score = score - 1;
+				} else/if (card.rank == "Joker") {
+					score = score - 5;
 				}
 			
 				// control for score floor at zero
