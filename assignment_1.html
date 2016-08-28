@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8">
+		<title>Cards and Conditionals</title>
+			<script src = "jquery-1.12.0.min.js"></script><!-- loads jQuery library -->
+			<script src = "playingCards.js"></script><!-- loads playing cards project files (js & css) -->
+			<script src = "playingCards.ui.js"></script>
+			<link rel="stylesheet" type="text/css" href="playingCards.ui.css">
+	</head>
+	<body>
+		<h2>Module 1: Cards and Conditionals</h2>
+		<div id = "controls">
+			<button type = "button" onclick="playRound();">
+				Dealer Draw a Card
+			</button>
+			<button type = "button" onclick="playRound();">
+				Player Draw a Card
+			</button>
+		</div>
+			<h4 id = "scoreboard"></h4>
+			<h4 id = "scoreboard2"></h4>
+				<br><br>
+		<div id = "cardtray"></div>
+		<div id = "cardtray2"></div>
+		
+		
+		<script><!-- game flow in JS -->
+			// set scoreboard
+				var score = 0;
+				
+			// create card objects
+				var cardDeck = $("#cardtray").playingCards();
+				var cardDeck2 = $("#cardtray2").playCards();
+			// shuffle cards
+				cardDeck.shuffle();
+				cardDeck2.shuffle();
+			
+			function playRound() {
+				var card = cardDeck.draw();
+				console.log(card);
+				
+					if ((card.suit < 'D') || (card.suit =='H')) {
+						score = score + 1; // || score++
+						if (card.rank == 'K') || (card.rank == 'Q') || (card.rank == 'J') || (card.rank == '10') {
+							score = score + 10;
+						}
+					}
+					else {
+						score = score - 1;
+					}
+					
+				
+			if {score > 21) {
+				$('scoreboard').append('lost!') {
+				}
+				
+				var markup = card.getHTML();
+				$('scoreboard').append(markup);
+				
+				var markup2 = card2.hetHTML();
+				$('scoreboard').append(markup2);
