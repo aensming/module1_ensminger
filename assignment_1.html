@@ -48,12 +48,12 @@
 				console.log( card );
 			
 				// use conditional statement, if, to decide scoring
-				if ( ( card.suit == 'D' ) || (card.suit == 'H') ){
-					score = score + 1; // score++;
+				if ( ( card.rank == 'k' ) || (card.rank == 'Q')  || (card.rank == 'J' || card.rank == '10') ){
+					score = score + 10; // score++;
 				
 					// a nested if statement
-					if ( card.rank == 'K' ) {
-						score = score + 10;
+					if ( card.rank == 'A' ) {
+						score = score + 11 || score ++;
 					}
 				} else {
 					score = score - 1; // score--;
