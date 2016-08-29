@@ -54,8 +54,8 @@
 				if (card.rank < '10') {
 					score = score + 1;
 					
-					if (( card.rank == 'K' ) || (card.rank == 'Q') || (card.rank == 'J')) {
-						score = ((score + 10) - 1);
+					if ((card.rank == 'K') || (card.rank == 'Q') || (card.rank == 'J')) {
+						score = (score + 10) - 1;
 					}
 				} else {
 					score = score + 10;
