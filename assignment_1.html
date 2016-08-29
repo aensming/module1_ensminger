@@ -49,11 +49,9 @@
 			function playRound() {
 				// draw one card object from deck
 				var card = cardDeck.draw();
-				var card2 = cardDeck.draw();
 				
 				// log card object to browser console for observing
 				console.log(card);
-				console.log(card2);
 				
 				// use conditional statement, if, to decide scoring
 				if ((card.rank >= '2') || (card.rank <= '9') && (card.rank < '10') ) {
