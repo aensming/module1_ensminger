@@ -21,7 +21,7 @@
 			<button type="button" onclick="playRound();">
 				Player 1: Draw a Card
 			</button>
-			<button type="button" onclick="playRound();">
+			<button type="button" onclick="playRound2();">
 				Player 2: Draw a Card
 			</button>
 		</div>
@@ -41,7 +41,7 @@
 		
 			// create card deck object
 			var cardDeck = $("#cardtray").playingCards();
-			var cardDeck2 = $("#cardtray2").playingCards();
+			var cardDeck = $("#cardtray2").playingCards();
         
 			// shuffle card objects
 			cardDeck.shuffle();
@@ -78,7 +78,7 @@
 			
 			}
 			
-			function playRound() {
+			function playRound2() {
 				// draw one card object from deck
 				var card2 = cardDeck.draw();
 			
