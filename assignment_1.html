@@ -40,8 +40,7 @@
 			var score2 = 0;
 		
 			// create card deck object
-			var cardDeck = $("#cardtray").playingCards();
-			var cardDeck2 = $("#cardtray2").playingCards();
+			var cardDeck = $("#cardtray").playingCards() && $("#cardtray2").playingCards();
         
 			// shuffle card objects
 			cardDeck.shuffle();
