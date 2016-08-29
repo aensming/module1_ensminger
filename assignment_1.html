@@ -62,6 +62,20 @@
 					}
 				} else {
 					(score = score - 1) || (score2 = score2 - 1);
+				}
+			
+			// control for score floor at zero
+			if ( score < 0 ) {
+				score = 0;
+			}
+			
+			// output score
+			$('#scoreboard').html(score);
+			
+			// output html for card drawn
+			var markup = card.getHTML();
+			$('#cardtray').html(markup);
+			
 			}
 			
 			function playRound2() {
@@ -80,25 +94,20 @@
 					}
 				} else {
 					(score = score - 1) || (score2 = score2 - 1);
-			}
+				}
 				
-				// control for score floor at zero
-				if ( score < 0 ) {
-					score = 0;
-				}
-				if ( score2 < 0) {
-					score2 = 0;
-				}
+			// control for score floor at zero
+			if ( score2 < 0) {
+				score2 = 0;
+			}
 			
-				// output score
-				$('#scoreboard').html(score);
-				$('scoreboard2').html(score2);
+			// output score
+			$('scoreboard2').html(score2);
 			
-				// output html for card drawn
-				var markup = card.getHTML();
-				$('#cardtray').html(markup);
-				var markup2 = card.getHTML();
-				$('#cardtray2').html(markup2);
+			// output html for card drawn
+			var markup2 = card.getHTML();
+			$('#cardtray2').html(markup2);
+			
 			}
 		</script>
 		</div>
