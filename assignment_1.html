@@ -42,7 +42,6 @@
 		
 			// create card deck object
 			var cardDeck = $("#cardtray").playingCards();
-			var cardDeck = $("#cardtray2").playingCards();
 			
 			// shuffle card objects
 			cardDeck.shuffle();
@@ -67,16 +66,6 @@
 					(score = score - 1);
 				}
 				
-				if ((card2.rank >= '2') || (card2.rank <= '9') && (card2.rank < '10') ) {
-					(score2 = score2 + 1);
-					
-					if (( card2.rank == 'K' ) || (card2.rank == 'Q') || (card2.rank == 'J') || (card2.rank == '10')) {
-						(score2 = ((score2 + 10) - 1));
-					}
-				} else {
-					(score2 = score2 - 1);
-				}
-				
 			
 			// control for score floor at zero
 			if ( score < 0 ) {
@@ -94,7 +83,7 @@
 			var markup = card.getHTML();
 			$('#cardtray').html(markup);
 			var markup2 = card2.getHTML();
-			$('cardtray2').html(markup2);
+			$('cardtray').html(markup2);
 			
 			}
 			
