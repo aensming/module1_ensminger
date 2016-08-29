@@ -62,24 +62,15 @@
 				}
 				
 			// control for score floor at zero
-			if ( score < 0 ) {
+			if (score < 0) {
 				score = 0;
 			}
-			
-			// output score
-			$('#scoreboard').html(score);
-			
-			// output html for card drawn
-			var markup = card.getHTML();
-			$('#cardtray').html(markup);	
-		
-			
-			// control for score floor at zero
-			if ( score2 < 0 ) {
+			if (score2 < 0) {
 				score2 = 0;
 			}
 			
 			// output score
+			$('#scoreboard').html(score);
 			$('#scoreboard2').html(score2);
 			
 			// output html for card drawn
